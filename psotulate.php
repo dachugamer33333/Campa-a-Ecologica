@@ -1,5 +1,5 @@
 <?php
 
-echo "commit agregar";
+echo "commit cambio";
 
 ?>
