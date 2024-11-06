@@ -73,7 +73,7 @@ class usuario{
         
     }
 
-    public function pb($conn,$user,$id)
+    public function solicitudes($conn,$user,$id)
     {
         $con=$conn->prepare("select permisos from usuarios where num_control=?");
         $con->bind_param('s',$id);
@@ -81,15 +81,18 @@ class usuario{
         $re=$con->get_result();
         $re=$re->fetch_assoc();
 
+        
+
         if($re['permisos']=='admin')
         {
+            echo '<div class="publicaciones">
+            <h2>Administracion</h2>';
             $admv=$conn->query('select * from solicitud');
           
 
             while($rowadm=$admv->fetch_assoc())
             {
-                echo "<div class='publicaciones'>
-            <h2>Solicitudes</h2>
+                echo "
 
             <div class='post'>
                 <h3>". $rowadm['titulo']."</h3>
@@ -98,12 +101,17 @@ class usuario{
             
             
             <!-- Agrega más publicaciones si es necesario -->
-        </div>";
+        ";
             }
             
-
+                echo ' </div>';
 
         }
+    }
+
+    public function pb($conn,$user,$id)
+    {
+        
 
         if(!isset($user))
         {

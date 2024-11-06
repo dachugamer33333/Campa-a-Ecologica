@@ -146,6 +146,13 @@
     <h1>Esquema de Interfaz de Usuario</h1>
 
     <div class="container">
+    
+        
+         <?php
+            $config->solicitudes($conn,$user,$id);
+
+        ?>
+       
         
         <div class="publicaciones">
             <h2>Publicaciones</h2>
