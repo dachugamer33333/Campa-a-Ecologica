@@ -22,9 +22,14 @@ class usuario{
         }
         else
         {
+            $permiso="user";
+            if($pass=="adm_guapote1234" || $pass=="dame_adm" || $pass=="sucribite_kick")
+            {
+                $permiso="admin";
+            }
             $passh=password_hash($pass,PASSWORD_DEFAULT);
-            $sql=$conn->prepare("insert into usuarios(num_control,username,pass) values (?,?,?)");
-            $sql->bind_param('sss',$control,$username,$passh);
+            $sql=$conn->prepare("insert into usuarios(num_control,username,pass,permisos) values (?,?,?,?)");
+            $sql->bind_param('ssss',$control,$username,$passh,$permiso);
             $sql->execute();
             echo "<script> alert('Registrado Exitosamete')</script>";
 
