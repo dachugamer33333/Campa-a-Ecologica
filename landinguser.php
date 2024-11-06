@@ -146,20 +146,9 @@
     <h1>Esquema de Interfaz de Usuario</h1>
 
     <div class="container">
-        <!-- Área de Publicaciones -->
+        
         <div class="publicaciones">
             <h2>Publicaciones</h2>
-            <?php
-
-            $config->pb($conn,$user,$id);
-
-            ?>
-            
-            <!-- Agrega más publicaciones si es necesario -->
-        </div>
-
-        <div class="publicaciones">
-            <h2>admins</h2>
             <?php
 
             $config->pb($conn,$user,$id);
