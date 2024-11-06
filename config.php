@@ -51,6 +51,7 @@ class usuario{
             session_start();
             $_SESSION['id']=$result['num_control'];
             $_SESSION['username']=$result['username']; 
+            $_SESSION['permisos']=$result['permisos'];
             header("Location:landinguser.php");
         }
         else{
@@ -72,7 +73,7 @@ class usuario{
         
     }
 
-    public function pb($conn,$user)
+    public function pb($conn,$user,$id)
     {
 
         if(!isset($user))

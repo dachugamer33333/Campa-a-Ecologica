@@ -3,6 +3,7 @@
     session_start();
     $config = new usuario();
     $user=$_SESSION['username'];
+    $id=$_SESSION['id'];
 
     if(isset($_POST['miBoton']))
     {
@@ -150,7 +151,18 @@
             <h2>Publicaciones</h2>
             <?php
 
-            $config->pb($conn,$user);
+            $config->pb($conn,$user,$id);
+
+            ?>
+            
+            <!-- Agrega más publicaciones si es necesario -->
+        </div>
+
+        <div class="publicaciones">
+            <h2>admins</h2>
+            <?php
+
+            $config->pb($conn,$user,$id);
 
             ?>
             
