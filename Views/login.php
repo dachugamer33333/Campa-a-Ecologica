@@ -1,5 +1,5 @@
 <?php
- require 'config.php';
+ require "../Controller/config.php";
     if($_SERVER['REQUEST_METHOD']=='POST')
     {
         $pass=isset($_POST['pass']) ? $_POST['pass'] : '';

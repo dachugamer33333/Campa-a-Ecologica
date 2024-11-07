@@ -1,11 +1,6 @@
 <?php
-$conn=new mysqli('127.0.0.1','root','','pf3');
+require '../Model/conexion.php';  // Ajusta según la ubicación real
 
-
-if($conn->connect_error)
-{
-    echo 'Error'. $conn->connect_error;
-}
 
 class usuario{
     public function registrar($conn,$username,$pass,$control)

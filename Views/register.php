@@ -1,15 +1,15 @@
 <?php
-require 'config.php';
+ require "../Controller/config.php";
 
-if($_SERVER['REQUEST_METHOD'] == 'POST')
-{
-    $contol=isset($_POST['control']) ? $_POST['control'] : '';
-    $username=isset($_POST['username']) ? $_POST['username'] : '';
-    $pass=isset($_POST['pass']) ? $_POST['pass'] : '';
+    if($_SERVER['REQUEST_METHOD'] == 'POST')
+    {
+        $contol=isset($_POST['control']) ? $_POST['control'] : '';
+        $username=isset($_POST['username']) ? $_POST['username'] : '';
+        $pass=isset($_POST['pass']) ? $_POST['pass'] : '';
 
-    $config=new usuario();
-    $config->registrar($conn,$username,$pass,$contol);
-}
+        $config=new usuario();
+        $config->registrar($conn,$username,$pass,$contol);
+    }
 
     
 

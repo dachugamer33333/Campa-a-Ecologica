@@ -1,5 +1,5 @@
 <?php
-    require "config.php";
+    require "../Controller/config.php";
     session_start();
     $config = new usuario();
     $user=$_SESSION['username'];
